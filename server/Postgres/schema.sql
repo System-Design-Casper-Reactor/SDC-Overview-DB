@@ -8,7 +8,7 @@
  );
 
  CREATE TABLE IF NOT EXISTS features(
-   id INT PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
    product_id INT,
    feature VARCHAR(25),
    value VARCHAR(25),
@@ -56,4 +56,4 @@ CREATE TABLE IF NOT EXISTS skus(
  CONSTRAINT fk_style
    FOREIGN KEY(style_id)
      REFERENCES styles(id)
-)
+);
