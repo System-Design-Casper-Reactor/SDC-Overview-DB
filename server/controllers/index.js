@@ -1,3 +1,7 @@
+const models = require('../models');
 
+module.exports = {
+  get: () => {
 
-module.exports = {};
+  }
+};
