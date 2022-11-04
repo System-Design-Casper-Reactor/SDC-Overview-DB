@@ -13,7 +13,7 @@ module.exports = {
   },
 
   getOne: (req, res) => {
-    models.getOne()
+    models.getOne(req.query.id)
       .then((result) => {
         res.status(200).send(result);
       })
@@ -23,7 +23,7 @@ module.exports = {
   },
 
   getRelated: (req,res) => {
-    models.getRelated()
+    models.getRelated(req.query.id)
       .then((result) => {
         res.status(200).send(result);
       })
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   getStyles: (req,res) => {
-    models.getStyles()
+    models.getStyles(req.query.id)
       .then((result) => {
         res.status(200).send(result);
       })
