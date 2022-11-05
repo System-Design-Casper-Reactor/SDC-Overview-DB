@@ -60,6 +60,13 @@ CREATE TABLE IF NOT EXISTS skus(
      REFERENCES styles(id)
 );
 
+CREATE INDEX product_index ON products(id);
+CREATE INDEX features_index ON features(product_id);
+CREATE INDEX styles_index ON styles(product_id);
+CREATE INDEX photos_index ON photos(style_id);
+CREATE INDEX skus_index ON skus(style_id);
+CREATE INDEX related_index ON related(product_id);
+
 
 
 \COPY products(id, name, slogan, description, category, default_price) FROM './data/product.csv' DELIMITER ',' csv header;
@@ -68,10 +75,3 @@ CREATE TABLE IF NOT EXISTS skus(
 \COPY photos(id, style_id, url, thumbnail_url) FROM './data/photos.csv' DELIMITER ',' csv header;
 \COPY related(id, current_product_id, related_product_id) FROM './data/related.csv' DELIMITER ',' csv header;
 \COPY skus(id, style_id, size, quantity) FROM './data/skus.csv' DELIMITER ',' csv header;
-
-SELECT setval(pg_get_serial_sequence('products', 'id'), (select max(id) from products));
-SELECT setval(pg_get_serial_sequence('features', 'id'), (select max(id) from features));
-SELECT setval(pg_get_serial_sequence('styles', 'id'), (select max(id) from styles));
-SELECT setval(pg_get_serial_sequence('photos', 'id'), (select max(id) from photos));
-SELECT setval(pg_get_serial_sequence('related', 'id'), (select max(id) from related));
-SELECT setval(pg_get_serial_sequence('skus', 'id'), (select max(id) from skus));
