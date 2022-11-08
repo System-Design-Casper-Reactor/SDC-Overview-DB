@@ -16,7 +16,6 @@ module.exports = {
   },
 
   getOne: async (id = 1) => {
-    console.log('INSIDE OF GET ONE');
     const client = await pool.connect();
     try {
       const response = await client.query(
@@ -31,7 +30,6 @@ module.exports = {
   },
 
   getRelated: async (id = 1) => {
-    console.log('INSIDE OF GET RELATED');
     const client = await pool.connect();
     try {
       const response = await client.query(
@@ -46,7 +44,6 @@ module.exports = {
   },
 
   getStyles: async (id = 1) => {
-    console.log('INSIDE OF STYLES');
     const client = await pool.connect();
     try {
       const response = await client.query(
