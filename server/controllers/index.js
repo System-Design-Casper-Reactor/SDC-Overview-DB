@@ -44,4 +44,8 @@ module.exports = {
         res.status(404).send(error);
       });
   },
+
+  loader: (req, res) => {
+    res.status(200).send('loaderio-77f220b41a4dd42ca3ffdaacb52c79ee');
+  },
 };
