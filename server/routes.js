@@ -7,5 +7,5 @@ router.get('/products', controllers.get);
 router.get('/products/:product_id', controllers.getOne);
 router.get('/products/:product_id/related', controllers.getRelated);
 router.get('/products/:product_id/styles', controllers.getStyles);
-router.get('/loaderio-77f220b41a4dd42ca3ffdaacb52c79ee', controllers.loader);
+router.get('/loaderio-03e5d8a1ff821025e29df547dc48c4bb', controllers.loader);
 module.exports = router;
